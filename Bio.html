@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lance Howell P. Villaran | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="bio.css">
+</head>
+<body>
+    <!-- Welcome Page -->
+    <div id="welcome-page" class="welcome-page">
+        <div class="welcome-content">
+            <h1>Welcome to My Biography</h1>
+            <p>Discover my journey, skills, hobbies, and more!</p>
+            <button class="proceed-btn" onclick="showMainInterface()">Proceed</button>
+        </div>
+    </div>
+
+    <!-- Main Interface (initially hidden) -->
+    <div id="main-interface" class="main-interface" style="display: none;">
+        <!-- Netflix-style Navigation Bar -->
+        <nav class="netflix-nav">
+            <div class="nav-container">
+                <div class="nav-logo">LHV</div>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="nav-menu">
+                    <button class="nav-item active" onclick="showTab('home')">Home</button>
+                    <button class="nav-item" onclick="showTab('about')">About Me</button>
+                    <button class="nav-item" onclick="showTab('hobbies')">Hobbies</button>
+                    <button class="nav-item" onclick="showTab('favorites')">Favorites</button>
+                    <button class="nav-item" onclick="showTab('games')">My Games</button>
+                    <button class="nav-item" onclick="showTab('skills')">Skills</button>
+                    <button class="nav-item" onclick="showTab('school')">School</button>
+                    <button class="nav-item" onclick="showTab('social')">Connect</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Home Section -->
+        <section id="home" class="content-section active">
+            <header class="hero-banner">
+                <div class="hero-content">
+                    <div class="profile-container">
+                        <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t39.30808-6/291251551_169091632282098_1994314744446273968_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFnyYSKTRK_02ITRCU5eDe48oc9w8ImLA7yhz3DwiYsDt1Wp4mqOm3Inf0X-9g4dcE1ZTig0iTDRWJ9gJQKaTZi&_nc_ohc=QyDpCb5lWKMQ7kNvgG1XWsY&_nc_oc=Adkdo7ncoV9mQM3j6N-TRY23hrhewE0vM0FRqVDLPtCwSnxUkslZWurm05lDV6wTxUU&_nc_zt=23&_nc_ht=scontent.fmnl17-1.fna&_nc_gid=cZ2RA6vJHGS6FEakt31t7w&oh=00_AYEDn15RoUn_OgnUC0TZVm5nhOdmg9QrmufghgMLK-bB3Q&oe=67F072A4" alt="Lance Howell P. Villaran" class="hero-profile">
+                    </div>
+                    <div class="hero-text">
+                        <h1 class="hero-title">LANCE HOWELL P. VILLARAN</h1>
+                        <h2 class="hero-subtitle">2CPE - A | Computer Engineering Student</h2>
+                        <div class="hero-buttons">
+                            <button class="hero-btn play-btn" onclick="showTab('about')">
+                                <i class="fas fa-info-circle"></i> More Info
+                            </button>
+                            <button class="hero-btn list-btn" onclick="showTab('skills')">
+                                <i class="fas fa-list"></i> My Skills
+                            </button>
+                        </div>
+                        <p class="hero-description">Tech Enthusiast | Creative Problem Solver | Future Engineer</p>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="content-section">
+            <h2 class="row-title">About Me</h2>
+            <div class="row-content">
+                <div class="info-card">
+                    <div class="card-content">
+                        <h3>Who Am I?</h3>
+                        <p>Hello! I'm <strong>Lance Howell P. Villaran</strong>, a passionate student with a creative mind who loves exploring digital experiences.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-content">
+                        <h3>My Passion</h3>
+                        <p>As a 2nd year Computer Engineering student, I have a never-ending curiosity for technology and specialize in creating solutions that bridge functionality and aesthetics.</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="card-content">
+                        <h3>My Interests</h3>
+                        <p>When I'm not coding, you can find me exploring new anime series, gaming, or enjoying my free time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hobbies Section -->
+        <section id="hobbies" class="content-section">
+            <h2 class="row-title">My Hobbies</h2>
+            <div class="row-content">
+                <div class="hobby-card">
+                    <div class="hobby-icon"><i class="fas fa-gamepad"></i></div>
+                    <div class="hobby-info">
+                        <h3>Gaming</h3>
+                        <p>I enjoy playing various video games, from competitive shooters to MOBA and turn-based games.</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon"><i class="fas fa-music"></i></div>
+                    <div class="hobby-info">
+                        <h3>Music</h3>
+                        <p>Listening to music is one of my hobbies as it helps me enjoy life.</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon"><i class="fas fa-film"></i></div>
+                    <div class="hobby-info">
+                        <h3>Anime</h3>
+                        <p>Watching anime is one of my favorite ways to unwind and get inspired.</p>
+                    </div>
+                </div>
+                <div class="hobby-card">
+                    <div class="hobby-icon"><i class="fas fa-code"></i></div>
+                    <div class="hobby-info">
+                        <h3>Coding</h3>
+                        <p>I love experimenting with coding tasks and strive to build personal projects.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Favorites Section -->
+        <section id="favorites" class="content-section">
+            <h2 class="row-title">My Favorites</h2>
+            <div class="favorites-container">
+                <div class="favorite-category">
+                    <h3><i class="fas fa-gamepad"></i> Games</h3>
+                    <ul class="favorite-list">
+                        <li>Mobile Legends</li>
+                        <li>Crossfire</li>
+                        <li>Honkai Star Rail</li>
+                        <li>Clash of clans</li>
+                        <li>Zenless Zone Zero</li>
+                    </ul>
+                </div>
+                <div class="favorite-category">
+                    <h3><i class="fas fa-film"></i> Anime</h3>
+                    <ul class="favorite-list">
+                        <li>Full metal Alchemist</li>
+                        <li>Demon Slayer</li>
+                        <li>Initial D</li>
+                        <li>One Piece</li>
+                        <li>Naruto</li>
+                        <Ii>Haikyuu</Ii>
+                        <Ii>One Punch Man</Ii>
+                    </ul>
+                </div>
+                <div class="favorite-category">
+                    <h3><i class="fas fa-music"></i> Music</h3>
+                    <ul class="favorite-list">
+                        <li>OPM Song</li>
+                        <li>J-pop</li>
+                        <li>Anime Soundtracks</li>
+                    </ul>
+                </div>
+                <div class="favorite-category">
+                    <h3><i class="fas fa-tv"></i> Korean Live action/Japanese Live Action</h3>
+                    <ul class="favorite-list">
+                        <li>Orange marmalade</li>
+                        <li>Alice in Borderland</li>
+                        <li>Itaewon Class</li>
+                        <li>Hotel de luna</li>
+                        <Ii>Goblin</Ii>
+                        <Ii>A silen Voice</Ii>
+                        <Ii>YOur lie in april</Ii>
+                        <li>All of Us Are Dead</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+<!-- Games Section -->
+<section id="games" class="content-section">
+    <h2 class="row-title">Favorite Online Games</h2>
+    <div class="row-content">
+        <div class="game-card" onclick="toggleGameDescription('ml')">
+            <img src="https://i.pinimg.com/736x/9d/e1/a1/9de1a194d1b7b954be1d4646d557e26f.jpg" alt="Mobile Legends">
+            <div class="game-info">
+                <h3>Mobile Legends</h3>
+                <p>MOBA for mobile devices</p>
+                <a href="https://m.mobilelegends.com/" target="_blank" class="game-link">Visit Official Site</a>
+            </div>
+            <div class="game-description" id="ml-desc">
+                <p>Mobile Legends: Bang Bang is a multiplayer online battle arena (MOBA) game designed for mobile phones. The game is free-to-play and is one of the most popular mobile games in the world.</p>
+            </div>
+        </div>
+        <div class="game-card" onclick="toggleGameDescription('cf')">
+            <img src="https://th.bing.com/th/id/OIP.Yd79wQjxi_bhsjycWEt80gHaCO?rs=1&pid=ImgDetMain" alt="Crossfire">
+            <div class="game-info">
+                <h3>Crossfire</h3>
+                <p>Tactical first-person shooter</p>
+                <a href="https://crossfire.z8games.com/" target="_blank" class="game-link">Visit Official Site</a>
+            </div>
+            <div class="game-description" id="cf-desc">
+                <p>CrossFire is a tactical first-person shooter online game developed by Smilegate. It features team-based gameplay with various modes including team deathmatch and search-and-destroy.</p>
+            </div>
+        </div>
+        <div class="game-card" onclick="toggleGameDescription('coc')">
+            <img src="https://img.clasher.us/images/full/5dcf6289d44ba57f29414c9b.jpg" alt="Clash of Clans">
+            <div class="game-info">
+                <h3>Clash of Clans</h3>
+                <p>Multiplayer Strategy Game</p>
+                <a href="https://supercell.com/en/games/clashofclans/" target="_blank" class="game-link">Visit Official Site</a>
+            </div>
+            <div class="game-description" id="coc-desc">
+                <p>Clash of Clans (CoC) is a popular mobile strategy game developed by Supercell. It was released in 2012 for iOS and Android and has since become one of the most successful free games in history.</p>
+            </div>
+        </div>
+        <div class="game-card" onclick="toggleGameDescription('codm')">
+            <img src="https://www.pngarts.com/files/8/Call-of-Duty-Mobile-Logo-PNG-Image-Background.png" alt="Call of Duty:Mobile">
+            <div class="game-info">
+                <h3>Call of Duty: Mobile</h3>
+                <p>First-Person Shooter Game</p>
+                <a href="https://www.callofduty.com/mobile" target="_blank" class="game-link">Visit Official Site</a>
+            </div>
+            <div class="game-description" id="codm-desc">
+                <p>Call of Duty: Mobile (CODM) is a free-to-play first-person shooter (FPS) mobile game developed by TiMi Studio Group and published by Activision.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+       <!-- Skills Section -->
+<section id="skills" class="content-section">
+    <h2 class="row-title">My Skills</h2>
+    
+    <!-- Programming Skills -->
+    <h3 class="skill-category">Programming Skills</h3>
+    <div class="skills-row">
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-html5"></i></div>
+            <div class="skill-info">
+                <h3>HTML</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 75%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+            <div class="skill-info">
+                <h3>CSS</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 70%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-php"></i></div>
+            <div class="skill-info">
+                <h3>PHP</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 68%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fab fa-python"></i></div>
+            <div class="skill-info">
+                <h3>Python</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 60%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Soft Skills -->
+    <h3 class="skill-category">Soft Skills</h3>
+    <div class="skills-row">
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-brain"></i></div>
+            <div class="skill-info">
+                <h3>Critical Thinking</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 85%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-users"></i></div>
+            <div class="skill-info">
+                <h3>Teamwork</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 90%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-comments"></i></div>
+            <div class="skill-info">
+                <h3>Communication</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gaming Skills -->
+    <h3 class="skill-category">Gaming Skills</h3>
+    <div class="skills-row">
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-gamepad"></i></div>
+            <div class="skill-info">
+                <h3>Strategic Planning</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 88%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-chess"></i></div>
+            <div class="skill-info">
+                <h3>Quick Decision Making</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 78%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-trophy"></i></div>
+            <div class="skill-info">
+                <h3>Competitive Play</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 69%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Skills -->
+    <h3 class="skill-category">Languages</h3>
+    <div class="skills-row">
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-language"></i></div>
+            <div class="skill-info">
+                <h3>Filipino (Native)</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 100%"></div>
+                </div>
+            </div>
+        </div>
+        <div class="skill-card">
+            <div class="skill-icon"><i class="fas fa-language"></i></div>
+            <div class="skill-info">
+                <h3>English (Fluent)</h3>
+                <div class="skill-meter">
+                    <div class="skill-level" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- School Section -->
+        <section id="school" class="content-section">
+            <h2 class="row-title">My Education</h2>
+            <div class="edu-row">
+                <div class="edu-card">
+                    <div class="edu-image">
+                        <img src="https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-6/414777914_675244374774947_4296129685565326155_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeEsKX0ObSw3fA6TMbM-QFZ81pGZm08PXzDWkZmbTw9fMIGQBQ8WL6oQN6BUandGkCYdlXyvjUMZI-r4VxZM1cHf&_nc_ohc=VxJnyUzBBlAQ7kNvgHEKY4l&_nc_oc=AdnFpsxa8N-AJMBSWxAyaVmjfCAqGHQm7xDqOVtMHFzOygs8VeRAE1g16Y0VkO330fw&_nc_zt=23&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=cxD8pPYkWE1zgUKadDbeZQ&oh=00_AYEX48eUXRl_5niOlBgMEl-rhjUCeO00JZCRIWZYbMC51A&oe=67F18F45" alt="QES Logo">
+                    </div>
+                    <div class="edu-details">
+                        <h3>QUISAO ELEMENTARY SCHOOL</h3>
+                        <p>2009-2017</p>
+                        <p>Graduated in April 2017</p>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-image">
+                        <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-6/279069023_115848581106387_2661843395457943193_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGgQZ6PQRSJ0EDPAvEFEIHMZ7fK7dFr8Btnt8rt0WvwG0zLYBCsV1VDMHlve6M_pi1A1IJeguz5wSRS0aiD3Hx6&_nc_ohc=9-XJvCgiFLIQ7kNvgHjyIjH&_nc_oc=Adkzsx3n7OmrGtU3YBzjA1_5rbcb5YbRJChpBrh7oS1B1xb-1JC5SGZo4NLI4mOFbuA&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=GAjTZPHcj5gof36Y4KHJpA&oh=00_AYGAKGS8B6c_Mb4hY8sxervyeZ8Ly1mES-GUGC_0qlVbRw&oe=67F1725F" alt="QINHS Logo">
+                    </div>
+                    <div class="edu-details">
+                        <h3>QUISAO INTEGRATED NATIONAL HIGHSCHOOL</h3>
+                        <p>2017 - 2023</p>
+                        <p>Senior High School (HUMSS)</p>
+                        <p>Graduated with honors (92% average)</p>
+                    </div>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-image">
+                        <img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-6/305322816_458853052932495_2742130614127664377_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeE7FMONKUoRZ83BXFgdwr7s5p4lgnTYDI7mniWCdNgMjkdIKUp5S5p3wTrrvXaRHnv8xtAjTp9uxbxFJQJQVXJZ&_nc_ohc=XiHUvSTXu8AQ7kNvgEabkfh&_nc_oc=AdnefCvRedVN8iGABF8X6je18WIW8F4yHixi9dBNWqoTT5rizRqLOROipNfdBRQeN5w&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=aEsESwYfl3owF38dW8lfLQ&oh=00_AYHSTcykYKAeUkKpxXgifcXlTXPifSVAjS4BCdbe9sO4ig&oe=67F196E5" alt="URSM University Logo">
+                    </div>
+                    <div class="edu-details">
+                        <h3>UNIVERSITY OF RIZAL SYSTEM - MORONG CAMPUS</h3>
+                        <p>2023 - current</p>
+                        <p>Bachelor of Science in Computer Engineering</p>
+                        <p>Currently in 2nd year</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Section -->
+        <section id="social" class="content-section">
+            <h2 class="row-title">Connect With Me</h2>
+            <div class="social-row">
+                <a href="https://www.facebook.com/share/18h3R4z4k2/" target="_blank" class="social-card facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://www.threads.net/@lance_villaran" target="_blank" class="social-card threads">
+                    <i class="fab fa-threads"></i>
+                    <span>Threads</span>
+                </a>
+                <a href="https://www.instagram.com/lance_villaran?igsh=MXFxcTd4MHZ5b3N0Zw==" target="_blank" class="social-card instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@lancehowellvillar61?_t=ZS-8v8pe5F4MSu&_r=1" target="_blank" class="social-card tiktok">
+                    <i class="fab fa-tiktok"></i>
+                    <span>TikTok</span>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <script src="bio.js"></script>
+</body>
+</html>
