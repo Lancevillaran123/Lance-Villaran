@@ -1,0 +1,699 @@
+/* Netflix-inspired Color Palette */
+:root {
+    --netflix-red: #e50914;
+    --netflix-dark: #141414;
+    --netflix-gray: #303030;
+    --netflix-light: #f5f5f5;
+    --netflix-text: #ffffff;
+    --netflix-text-secondary: #e5e5e5;
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: var(--netflix-dark);
+    color: var(--netflix-text);
+    line-height: 1.4;
+    overflow-x: hidden;
+}
+
+/* Welcome Page */
+.welcome-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 100%), 
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.welcome-content {
+    text-align: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.welcome-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: var(--netflix-red);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.welcome-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--netflix-text-secondary);
+}
+
+.proceed-btn {
+    padding: 1rem 2.5rem;
+    background-color: var(--netflix-red);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.proceed-btn:hover {
+    background-color: #f40612;
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Main Interface */
+.main-interface {
+    width: 100%;
+}
+
+/* Netflix Navigation Bar */
+.netflix-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 4%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    transition: background-color 0.4s;
+}
+
+.netflix-nav.scrolled {
+    background-color: var(--netflix-dark);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    color: var(--netflix-red);
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.nav-menu::-webkit-scrollbar {
+    display: none;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: var(--netflix-text-secondary);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-item:hover {
+    color: var(--netflix-text);
+}
+
+.nav-item.active {
+    color: var(--netflix-text);
+    font-weight: 600;
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--netflix-red);
+}
+
+/* Hero Banner */
+.hero-banner {
+    height: 100vh;
+    background: linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%), 
+                url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1772&q=80') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    padding: 0 4%;
+    position: relative;
+    margin-top: -80px;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.profile-container {
+    flex: 0 0 300px;
+}
+
+.hero-profile {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.hero-profile:hover {
+    transform: scale(1.03);
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--netflix-text-secondary);
+    margin-bottom: 2rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-btn {
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+}
+
+.play-btn {
+    background-color: var(--netflix-red);
+    color: white;
+    border: none;
+}
+
+.play-btn:hover {
+    background-color: #f40612;
+}
+
+.list-btn {
+    background-color: rgba(109, 109, 110, 0.7);
+    color: white;
+    border: none;
+}
+
+.list-btn:hover {
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/* Content Rows */
+.content-container {
+    padding: 4rem 4%;
+    background-color: var(--netflix-dark);
+}
+
+.content-row {
+    margin-bottom: 4rem;
+}
+
+.row-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.row-content {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    scrollbar-width: none;
+}
+
+.row-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Info Cards */
+.info-card {
+    flex: 0 0 300px;
+    background-color: var(--netflix-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.info-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--netflix-red);
+}
+
+.card-content p {
+    color: var(--netflix-text-secondary);
+    line-height: 1.6;
+}
+
+/* Hobbies Section */
+.hobby-card {
+    flex: 0 0 220px;
+    background-color: var(--netflix-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.hobby-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.hobby-icon {
+    font-size: 2.5rem;
+    color: var(--netflix-red);
+    margin-bottom: 1rem;
+}
+
+.hobby-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hobby-info p {
+    color: var(--netflix-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Online Games Section */
+.game-card {
+    flex: 0 0 240px;
+    background-color: var(--netflix-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+    position: relative;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.game-card img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-bottom: 3px solid var(--netflix-red);
+}
+
+.game-info {
+    padding: 1rem;
+}
+
+.game-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.game-info p {
+    color: var(--netflix-text-secondary);
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.game-description {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 1rem;
+    color: var(--netflix-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* Skills Section */
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.skill-card {
+    flex: 0 0 calc(25% - 1.5rem);
+    background-color: var(--netflix-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--netflix-red);
+}
+
+.skill-info {
+    flex: 1;
+}
+
+.skill-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.skill-meter {
+    height: 6px;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.skill-level {
+    height: 100%;
+    background-color: var(--netflix-red);
+    border-radius: 3px;
+}
+
+/* School Section */
+.edu-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.edu-card {
+    flex: 1;
+    background-color: var(--netflix-gray);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.school-card {
+    position: relative;
+}
+
+.edu-card:hover {
+    transform: scale(1.03);
+}
+
+.edu-icon {
+    font-size: 2rem;
+    color: var(--netflix-red);
+}
+
+.edu-details h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.edu-details p, .edu-details li {
+    color: var(--netflix-text-secondary);
+    line-height: 1.6;
+}
+
+.school-description {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--netflix-red);
+    color: var(--netflix-text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Social Media Section */
+.social-row {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-card {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    transition: all 0.6s;
+}
+
+.social-card:hover::before {
+    transform: translateX(100%);
+}
+
+.social-card:hover {
+    transform: scale(1.1);
+}
+
+.social-card span {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.facebook { background-color: #1877f2; }
+.threads { background-color: #000000; }
+.instagram { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+.tiktok { background-color: #000000; }
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+    
+    .profile-container {
+        flex: 0 0 auto;
+        width: 200px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .skill-card {
+        flex: 0 0 calc(50% - 1.5rem);
+    }
+    
+    .edu-row {
+        flex-direction: column;
+    }
+    
+    .welcome-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .hero-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .skill-card {
+        flex: 0 0 100%;
+    }
+    
+    .welcome-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .welcome-content p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hero-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .nav-menu {
+        gap: 0.5rem;
+    }
+    
+    .nav-item {
+        font-size: 0.9rem;
+    }
+    
+    .welcome-content h1 {
+        font-size: 2rem;
+    }
+    
+    .welcome-content p {
+        font-size: 1rem;
+    }
+    
+    .proceed-btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .hero-content {
+        padding-top: 80px;
+    }
+    
+    .hero-profile {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .game-card {
+        flex: 0 0 200px;
+    }
+    
+    .hobby-card {
+        flex: 0 0 180px;
+    }
+    
+    .info-card {
+        flex: 0 0 250px;
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 375px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .row-title {
+        font-size: 1.5rem;
+    }
+    
+    .nav-menu {
+        gap: 0.3rem;
+    }
+    
+    .nav-item {
+        font-size: 0.8rem;
+    }
+}
